@@ -9,6 +9,21 @@ public class UserDAO {
 
     private static final DBContext db = DBContext.getInstance();
 
+    // Cập nhật thông tin cá nhân
+    public boolean updateUserProfile(int userId, String fullName, String email, String address) {
+        DBContext db = DBContext.getInstance();
+        String sql = "UPDATE Users SET FullName = ?, Email = ?, Address = ? WHERE UserID = ?";
+        try (PreparedStatement statement = db.getConnection().prepareStatement(sql)) {
+            statement.setString(1, fullName);
+            statement.setString(2, email);
+            statement.setString(3, address);
+            statement.setInt(4, userId);
+            return statement.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
     // Kiểm tra thông tin đăng nhập
     public User authenticate(String email, String password) {
         String sql = "SELECT * FROM Users WHERE Email = ? AND Password = ?";

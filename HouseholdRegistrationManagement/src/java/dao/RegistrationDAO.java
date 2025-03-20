@@ -220,43 +220,35 @@ public class RegistrationDAO{
         }
         return false;
     }
+    public Registration getRegistrationById(int registrationId) {
+        List<Registration> list = new ArrayList<>();
+        DBContext db = DBContext.getInstance();
+        String sql = "SELECT * FROM Registrations WHERE registrationId = ? ";
+        try{
+            PreparedStatement statement = db.getConnection().prepareStatement(sql);
+            statement.setInt(1, registrationId);
+            ResultSet rs = statement.executeQuery();
+            if(rs.next()) {
+            Registration r = new Registration();
+            r.setRegistrationId(rs.getInt("RegistrationID"));
+            r.setUserId(rs.getInt("UserID")); // Đúng ID của citizen
+            r.setRegistrationType(rs.getString("RegistrationType"));
+            r.setAddress(rs.getString("Address"));
+            r.setStartDate(rs.getString("StartDate"));
+            r.setEndDate(rs.getString("EndDate"));
+            r.setStatus(rs.getString("Status"));
+            r.setDocumentPath(rs.getString("DocumentPath"));
+            return r;
+        }
+        }catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
     public static void main(String[] args) {
-        RegistrationDAO dao = new RegistrationDAO();
-
-        // Test lấy danh sách hồ sơ chờ duyệt (Hộ khẩu)
-        System.out.println("🔹 Testing getPendingHouseholdRegistrations...");
-        List<Registration> householdRegistrations = dao.getPendingHouseholdRegistrations();
-        if (householdRegistrations.isEmpty()) {
-            System.out.println("❌ Không có đơn đăng ký hộ khẩu nào đang chờ duyệt.");
-        } else {
-            for (Registration r : householdRegistrations) {
-                System.out.println("✅ Hộ khẩu chờ duyệt: " + r.getRegistrationId() + " - " + r.getAddress() + "-" + r.getDocumentPath());
-            }
-        }
-
-        // Test lấy danh sách hồ sơ chờ duyệt (Tách hộ khẩu)
-        System.out.println("\n🔹 Testing getPendingSeparationRegistrations...");
-        List<Registration> separationRegistrations = dao.getPendingSeparationRegistrations();
-        if (separationRegistrations.isEmpty()) {
-            System.out.println("❌ Không có đơn tách hộ khẩu nào đang chờ duyệt.");
-        } else {
-            for (Registration r : separationRegistrations) {
-                System.out.println("✅ Tách hộ khẩu chờ duyệt: " + r.getRegistrationId() + " - " + r.getAddress());
-            }
-        }
-
-        // Test cập nhật trạng thái hồ sơ
-        if (!householdRegistrations.isEmpty()) {
-            int testRegistrationId = householdRegistrations.get(0).getRegistrationId();
-            System.out.println("\n🔹 Testing updateRegistrationStatus...");
-            boolean updateSuccess = dao.updateRegistrationStatus(testRegistrationId, "Approved", 1);
-            if (updateSuccess) {
-                System.out.println("✅ Đã cập nhật trạng thái hồ sơ ID " + testRegistrationId + " thành 'Approved'.");
-            } else {
-                System.out.println("❌ Không thể cập nhật trạng thái.");
-            }
-        }
-        
+        RegistrationDAO registrationDAO = new RegistrationDAO();
+        Registration list = registrationDAO.getRegistrationById(1085);
+        System.out.println(list.getRegistrationType());
     }
 
 

@@ -75,7 +75,7 @@
                                     <li>
                                         <a
                                             class="dropdown-item"
-                                            href="contact-2.html"
+                                            href="${pageContext.request.contextPath}/profile"
                                             >Thông tin cá nhân</a
                                         >
                                     </li>
