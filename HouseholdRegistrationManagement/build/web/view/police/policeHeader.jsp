@@ -68,6 +68,41 @@
                             >
 
                         </li>
+                        <li
+                            class="nav-item dropdown ddohOpener"
+                            >
+                            <a
+                                class="dropdown-toggle dropIcn"
+                                href="javascript:void(0);"
+                                role="button"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                >Tài khoản</a
+                            >
+                            <div
+                                class="dropdown-menu hdMainDropdown desktopDropOnHover"
+                                >
+                                <ul
+                                    class="list-unstyled mb-0 hdDropdownList"
+                                    >
+                                    <li>
+                                        <a
+                                            class="dropdown-item"
+                                            href="${pageContext.request.contextPath}/profile"
+                                            >Thông tin cá nhân</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a
+                                            class="dropdown-item"
+                                            href="${pageContext.request.contextPath}/logout"
+                                            >Đăng xuất</a
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
                         <li class="nav-item">
                             <a href="">Thông báo</a>
                         </li>

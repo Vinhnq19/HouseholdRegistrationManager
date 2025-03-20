@@ -20,7 +20,7 @@ import lombok.ToString;
 @Getter
 @Setter
 public class Notification {
-    private int notification;
+    private int notificationId;
     private int userId;
     private String message;
     private String sentDate;

@@ -47,10 +47,17 @@
         <servlet-name>ApprovalServlet</servlet-name>
         <servlet-class>controller.ApprovalServlet</servlet-class>
     </servlet>
-
     <servlet>
         <servlet-name>UserServlet</servlet-name>
         <servlet-class>controller.UserServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NotificationServlet</servlet-name>
+        <servlet-class>controller.NotificationServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProfileServlet</servlet-name>
+        <servlet-class>controller.ProfileServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AuthServlet</servlet-name>
@@ -94,7 +101,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>UserServlet</servlet-name>
-        <url-pattern>/UserServlet</url-pattern>
+        <url-pattern>/user</url-pattern>
     </servlet-mapping>
     <mime-mapping>
         <extension>woff</extension>
@@ -103,6 +110,14 @@
     <servlet-mapping>
         <servlet-name>ApprovalServlet</servlet-name>
         <url-pattern>/profileApproval</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NotificationServlet</servlet-name>
+        <url-pattern>/notification</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProfileServlet</servlet-name>
+        <url-pattern>/profile</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

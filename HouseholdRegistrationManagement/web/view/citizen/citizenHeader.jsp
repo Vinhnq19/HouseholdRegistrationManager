@@ -104,7 +104,7 @@
                                     <li>
                                         <a
                                             class="dropdown-item"
-                                            href="contact-2.html"
+                                            href="${pageContext.request.contextPath}/profile"
                                             >Thông tin cá nhân</a
                                         >
                                     </li>
@@ -119,7 +119,7 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a href="${pageContext.request.contextPath}/citizenNotifications.jsp">Thông báo</a>
+                            <a href="${pageContext.request.contextPath}/notification">Thông báo</a>
                         </li>
                     </ul>
                 </div>

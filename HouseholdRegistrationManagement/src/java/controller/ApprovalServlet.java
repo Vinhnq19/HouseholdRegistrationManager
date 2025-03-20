@@ -5,18 +5,22 @@
 
 package controller;
 
+import dao.NotificationDAO;
 import dao.RegistrationDAO;
 import dao.UserDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import java.util.*;
-import model.Registration;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import model.Registration;
 import model.User;
 
 
@@ -25,8 +29,8 @@ import model.User;
  * @author Vinh
  */
 public class ApprovalServlet extends HttpServlet {
-    RegistrationDAO registrationDAO = new RegistrationDAO();
-    UserDAO userDAO = new UserDAO();
+    private final RegistrationDAO registrationDAO = new RegistrationDAO();
+    private final UserDAO userDAO = new UserDAO();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -75,37 +79,34 @@ public class ApprovalServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
+        NotificationDAO notificationDAO = new NotificationDAO();
         HttpSession session = request.getSession();
         Integer userId = (Integer) session.getAttribute("userId");
         
         int registrationId = Integer.parseInt(request.getParameter("registrationId"));
         String action = request.getParameter("action");
         String status = action.equals("approve") ? "Approved" : "Rejected";
-        
-    boolean updated = registrationDAO.updateRegistrationStatus(registrationId, status, userId);
 
-    if (updated) {
-        request.setAttribute("message", "✅ Đã " + (action.equals("approve") ? "duyệt" : "từ chối") + " hồ sơ!");
-    } else {
-        request.setAttribute("error", "❌ Không thể cập nhật trạng thái hồ sơ.");
+        boolean updated = registrationDAO.updateRegistrationStatus(registrationId, status, userId);
+        Registration reg = registrationDAO.getRegistrationById(registrationId);
+        boolean notifySuccess = notificationDAO.sendNotification(reg.getUserId(), reg.getRegistrationType(), action.equals("approve"));
+
+        if (updated) {
+            request.setAttribute("message", "✅ Đã " + (action.equals("approve") ? "duyệt" : "từ chối") + " hồ sơ!");
+        } else {
+            request.setAttribute("error", "❌ Không thể cập nhật trạng thái hồ sơ.");
+        }
+
+        request.getRequestDispatcher("/view/leader/profileApproval.jsp").forward(request, response);
     }
 
-    request.getRequestDispatcher("/view/leader/profileApproval.jsp").forward(request, response);
-}
-    
-
-    private void sendNotification(int registrationId, String message) {
-        // Gửi thông báo đến người dân (có thể dùng Email hoặc Notification Table)
-        System.out.println("Thông báo gửi đến đơn " + registrationId + ": " + message);
-    }
-
-    /** 
+    /**
      * Returns a short description of the servlet.
      * @return a String containing servlet description
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
+        return "Servlet xử lý phê duyệt đơn đăng ký và gửi thông báo";
     }// </editor-fold>
 }
 
