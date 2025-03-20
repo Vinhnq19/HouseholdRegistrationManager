@@ -1,0 +1,47 @@
+# Bỏ qua các file biên dịch
+*.class
+*.war
+*.jar
+
+# Bỏ qua thư mục build và dist
+/build/
+*/build/
+dist/
+target/
+
+# Bỏ qua thư viện do NetBeans quản lý
+nbproject/private/
+nbproject/Makefile-*
+nbproject/Package-*
+*.orig
+
+# Bỏ qua các file cấu hình NetBeans cá nhân
+.netbeans/
+nbproject/private/
+**/nb-configuration.xml
+
+# Bỏ qua thư mục `.idea` (nếu dùng IntelliJ nữa)
+.idea/
+*.iml
+
+# Bỏ qua file log, cache
+logs/
+*.log
+hs_err_pid*
+.DS_Store
+
+# Bỏ qua thư mục chứa dependency nếu dùng Maven hoặc Gradle
+.mvn/
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+dependency-reduced-pom.xml
+releases/
+build/
+.gradle/
+out/
+
+# Bỏ qua file môi trường
+*.env
+*.bak
+*.swp
