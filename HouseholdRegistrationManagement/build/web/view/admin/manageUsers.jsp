@@ -63,7 +63,7 @@ List<User> userList = (!searchQuery.isEmpty() || !roleFilter.isEmpty()) ?
                 <header id="pageHeader" class="bg-white">
                     <jsp:include page="../admin/adminHeader.jsp"></jsp:include>   
                     </header>
-
+                    <main>
                     <div class="container mt-4">
                         <h2 class="text-center">Quản lý người dùng</h2>
                         <form id="filterForm" action="manageUsers.jsp" method="GET" class="row g-3 justify-content-center">
@@ -112,19 +112,19 @@ List<User> userList = (!searchQuery.isEmpty() || !roleFilter.isEmpty()) ?
                             </tbody>
                         </table>
                     </div>
-                </div>
-                <script src="${pageContext.request.contextPath}/js/bootstrap.bundle.min.js"></script>
-
-                <footer
-                    id="pageFooter"
-                    class="text-center bg-danger pt-6 pb-3 pt-md-8 pb-md-5"
-                    >
-                    <div class="container">
-                        <p>
-                            <jsp:include page="../citizen/ftAreaWrap.jsp"></jsp:include>
-                        </p>
                     </div>
-                </footer>
+                    <script src="${pageContext.request.contextPath}/js/bootstrap.bundle.min.js"></script>
+                    </main>
+                    <footer
+                        id="pageFooter"
+                        class="text-center bg-danger pt-6 pb-3 pt-md-8 pb-md-5"
+                        >
+                        <div class="container">
+                            <p>
+                                <jsp:include page="../admin/ftAreaWrap.jsp"></jsp:include>
+                            </p>
+                        </div>
+                    </footer>
 
-                </body>
-                </html>
+            </body>
+            </html>

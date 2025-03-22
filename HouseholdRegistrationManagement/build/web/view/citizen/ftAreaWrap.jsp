@@ -11,7 +11,7 @@
             <div class="row align-items-center">
                 <!-- Logo -->
                 <div class="col-12 col-md-3 text-center mb-3 mb-md-0">
-                    <a href="home.jsp">
+                    <a href="${pageContext.request.contextPath}/citizen/home">
                         <img src="${pageContext.request.contextPath}/img/VNPS2.png" class="img-fluid" alt="VNPS" style="max-height: 60px;">
                     </a>
                 </div>

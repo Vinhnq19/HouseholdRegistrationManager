@@ -53,7 +53,9 @@ public class AdminServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
+        String path = request.getServletPath();
+        String targetPage = "/view/admin/adminHome.jsp"; // Mặc định là trang chủ
+        request.getRequestDispatcher(targetPage).forward(request, response);
     } 
 
     /** 

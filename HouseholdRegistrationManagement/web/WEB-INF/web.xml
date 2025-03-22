@@ -59,17 +59,21 @@
         <servlet-name>ProfileServlet</servlet-name>
         <servlet-class>controller.ProfileServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AreaLeaderServlet</servlet-name>
+        <servlet-class>controller.AreaLeaderServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AuthServlet</servlet-name>
         <url-pattern>/auth</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CitizenServlet</servlet-name>
-        <url-pattern>/citizen</url-pattern>
+        <url-pattern>/citizen/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AdminServlet</servlet-name>
-        <url-pattern>/admin</url-pattern>
+        <url-pattern>/admin/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>HouseholdLeaderServlet</servlet-name>
@@ -77,7 +81,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PoliceServlet</servlet-name>
-        <url-pattern>/police</url-pattern>
+        <url-pattern>/police/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>HouseholdServlet</servlet-name>
@@ -118,6 +122,10 @@
     <servlet-mapping>
         <servlet-name>ProfileServlet</servlet-name>
         <url-pattern>/profile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AreaLeaderServlet</servlet-name>
+        <url-pattern>/areaLeader/*</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

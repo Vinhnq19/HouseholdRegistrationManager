@@ -58,6 +58,13 @@ public class RegistrationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String action = request.getParameter("action");
+        String targetPage = "/view/citizen/HouseholdRegistration.jsp"; // Mặc định
+
+        if ("separation".equals(action)) {
+            targetPage = "/view/citizen/separatingRegistration.jsp";
+        }
+        request.getRequestDispatcher(targetPage).forward(request, response);
     }
 
     /**

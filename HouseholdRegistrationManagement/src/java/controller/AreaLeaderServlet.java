@@ -5,22 +5,18 @@
 
 package controller;
 
-import dao.RegistrationDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-import java.util.List;
-import model.Registration;
 
 /**
  *
  * @author Vinh
  */
-public class CitizenServlet extends HttpServlet {
+public class AreaLeaderServlet extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -37,24 +33,22 @@ public class CitizenServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet CitizenServlet</title>");  
+            out.println("<title>Servlet AreaLeaderServlet</title>");  
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet CitizenServlet at " + request.getContextPath () + "</h1>");
+            out.println("<h1>Servlet AreaLeaderServlet at " + request.getContextPath () + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
     } 
-    
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         String path = request.getServletPath();
-        String targetPage = "/view/citizen/citizenHome.jsp"; // Mặc định là trang chủ
+        String targetPage = "/view/leader/leaderHome.jsp"; // Mặc định là trang chủ
         request.getRequestDispatcher(targetPage).forward(request, response);
-    }
-    
-
+    } 
 
     /** 
      * Handles the HTTP <code>POST</code> method.
@@ -75,7 +69,7 @@ public class CitizenServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "CitizenServlet - Xử lý điều hướng cho công dân";
+        return "Short description";
     }// </editor-fold>
 
 }
