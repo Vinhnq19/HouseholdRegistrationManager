@@ -19,7 +19,7 @@
             <div
                 class="logo flex-shrink-0 mr-3 mr-xl-8 mr-xlwd-16"
                 >
-                <a href="${pageContext.request.contextPath}/view/citizen/citizenHome.jsp">
+                <a href="${pageContext.request.contextPath}/citizen/home">
                     <img
                         src="${pageContext.request.contextPath}/img/VNPS.png"
                         class="img-fluid"
@@ -36,7 +36,7 @@
                     >
                     <ul class="navbar-nav mainNavigation">
                         <li class="nav-item">
-                            <a href="${pageContext.request.contextPath}/view/citizen/citizenHome.jsp">Trang chủ</a>
+                            <a href="${pageContext.request.contextPath}/citizen/home">Trang chủ</a>
                         </li>
                         <li
                             class="nav-item dropdown ddohOpener"
@@ -59,14 +59,14 @@
                                     <li>
                                         <a
                                             class="dropdown-item"
-                                            href="${pageContext.request.contextPath}/view/citizen/HouseholdRegistration.jsp"
+                                            href="${pageContext.request.contextPath}/registration?action=household"
                                             >Đăng ký hộ khẩu</a
                                         >
                                     </li>
                                     <li>
                                         <a
                                             class="dropdown-item"
-                                            href="${pageContext.request.contextPath}/view/citizen/separatingRegistration.jsp"
+                                            href="${pageContext.request.contextPath}/registration?action=separation"
                                             >Tách hộ khẩu</a
                                         >
                                     </li>

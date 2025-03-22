@@ -1,17 +1,17 @@
-z`<%-- 
+<%-- 
     Document   : ftAreaWrap
     Created on : 6 thg 3, 2025, 22:56:13
     Author     : Vinh
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>    
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!-- Footer -->
     <footer class="text-white">
         <div class="container">
             <div class="row align-items-center">
                 <!-- Logo -->
                 <div class="col-12 col-md-3 text-center mb-3 mb-md-0">
-                    <a href="${pageContext.request.contextPath}/admin/home">
+                    <a href="${pageContext.request.contextPath}/areaLeader/home">
                         <img src="${pageContext.request.contextPath}/img/VNPS2.png" class="img-fluid" alt="VNPS" style="max-height: 60px;">
                     </a>
                 </div>
@@ -34,4 +34,3 @@ z`<%--
             </div>
         </div>
     </footer>
-

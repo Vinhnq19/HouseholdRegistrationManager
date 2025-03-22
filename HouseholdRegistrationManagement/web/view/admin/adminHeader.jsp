@@ -19,7 +19,7 @@
             <div
                 class="logo flex-shrink-0 mr-3 mr-xl-8 mr-xlwd-16"
                 >
-                <a href="${pageContext.request.contextPath}/view/admin/adminHome.jsp">
+                <a href="${pageContext.request.contextPath}/admin/home">
                     <img
                         src="${pageContext.request.contextPath}/img/VNPS.png"
                         class="img-fluid"
@@ -36,7 +36,7 @@
                     >
                     <ul class="navbar-nav mainNavigation">
                         <li class="nav-item">
-                            <a href="${pageContext.request.contextPath}/view/admin/adminHome.jsp">Trang chủ</a>
+                            <a href="${pageContext.request.contextPath}/admin/home">Trang chủ</a>
                         </li>
                         <li class="nav-item">
                             <a href="${pageContext.request.contextPath}/view/admin/manageUsers.jsp">Người dùng</a>

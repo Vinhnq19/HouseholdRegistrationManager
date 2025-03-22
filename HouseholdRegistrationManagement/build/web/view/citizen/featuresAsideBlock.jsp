@@ -14,7 +14,7 @@
                             >
                                 <li>
                                     <a
-                                        href="${pageContext.request.contextPath}/view/citizen/citizenHome.jsp"
+                                        href="${pageContext.request.contextPath}/citizen/home"
                                         class="fflColumn d-block w-100 text-center px-2 pt-4 pb-10"
                                     >
                                         <img src="${pageContext.request.contextPath}/img/logoCitizen.png" alt="Congdan"/>
@@ -25,7 +25,7 @@
                                 </li>
                                 <li>
                                     <a
-                                        href="${pageContext.request.contextPath}/view/citizen/HouseholdRegistration.jsp"
+                                        href="${pageContext.request.contextPath}/registration?action=household"
                                         class="fflColumn d-block w-100 text-center px-2 pt-4 pb-10"
                                     >
                                         <img src="${pageContext.request.contextPath}/img/logoCitizen.png" alt="Congdan"/>
@@ -36,7 +36,7 @@
                                 </li>
                                 <li>
                                     <a
-                                        href="${pageContext.request.contextPath}/view/citizen/separatingRegistration.jsp"
+                                        href="${pageContext.request.contextPath}/registration?action=separation"
                                         class="fflColumn d-block w-100 text-center px-2 pt-4 pb-10"
                                     >
                                         <img src="${pageContext.request.contextPath}/img/logoCitizen.png" alt="Congdan"/>
@@ -69,7 +69,7 @@
                                 </li>
                                 <li>
                                     <a
-                                        href="servicesSingle.html"
+                                        href="${pageContext.request.contextPath}/notification"
                                         class="fflColumn d-block w-100 text-center px-2 pt-4 pb-10"
                                         >
                                         <img src="${pageContext.request.contextPath}/img/logoCitizen.png" alt="Congdan"/>

@@ -3,14 +3,14 @@
     <div class="flatpWrap position-relative mt-n8 mt-md-n18">
         <ul class="list-unstyled fabFeaturesList d-flex flex-wrap justify-content-center">
             <li class="col-6 col-sm-4 col-md-3 p-2">
-                <a href="${pageContext.request.contextPath}/view/leader/leaderHome.jsp"
+                <a href="${pageContext.request.contextPath}/areaLeader/home"
                    class="fflColumn d-block w-100 text-center px-2 pt-4 pb-10">
                     <img src="${pageContext.request.contextPath}/img/logoCitizen.png" class="feature-icon" alt="Trang chủ"/>
                     <h2 class="mb-0">Trang chủ</h2>
                 </a>
             </li>
             <li class="col-6 col-sm-4 col-md-3 p-2">
-                <a href="${pageContext.request.contextPath}/view/leader/profileApproval.jsp"
+                <a href="${pageContext.request.contextPath}/profileApproval"
                    class="fflColumn d-block w-100 text-center px-2 pt-4 pb-10">
                     <img src="${pageContext.request.contextPath}/img/logoCitizen.png" class="feature-icon" alt="Duyệt hồ sơ"/>
                     <h2 class="mb-0">Duyệt<br/>Hồ sơ</h2>
@@ -24,7 +24,7 @@
                 </a>
             </li>
             <li class="col-6 col-sm-4 col-md-3 p-2">
-                <a href="${pageContext.request.contextPath}/view/leader/leaderNotification.jsp"
+                <a href="${pageContext.request.contextPath}/notification"
                    class="fflColumn d-block w-100 text-center px-2 pt-4 pb-10">
                     <img src="${pageContext.request.contextPath}/img/logoCitizen.png" class="feature-icon" alt="Danh sách hộ"/>
                     <h2 class="mb-0">Thông báo</h2>

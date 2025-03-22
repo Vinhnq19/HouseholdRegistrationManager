@@ -111,7 +111,7 @@ main {
                 >
                     <div class="container">
                         <p>
-                            <jsp:include page="../common/ftAreaWrap.jsp"></jsp:include>
+                            <jsp:include page="../leader/ftAreaWrap.jsp"></jsp:include>
                         </p>
                     </div>
                 </footer>
