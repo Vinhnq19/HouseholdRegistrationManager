@@ -5,6 +5,22 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<style>
+    html, body {
+    height: 100%;
+    margin: 0;
+}
+#pageWrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main {
+    flex-grow: 1;
+}
+</style>
+
 <!-- Footer -->
     <footer class="text-white">
         <div class="container">
