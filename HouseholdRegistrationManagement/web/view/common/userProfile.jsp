@@ -80,13 +80,29 @@ main {
         </style>
     </head>
     <body>
+        
         <div id="pageWrapper" class="ltr">
             <!-- Header -->
             <div class="phStickyWrap">
-                <header id="pageHeader" class="bg-white">
-                    <jsp:include page="../citizen/citizenHeader.jsp"></jsp:include>   
-                </header>
+                <c:choose>
+                    <c:when test="${user.role == 'Citizen'}">
+                        <jsp:include page="../citizen/citizenHeader.jsp"/>
+                    </c:when>
+                    <c:when test="${user.role == 'AreaLeader'}">
+                        <jsp:include page="../leader/leaderHeader.jsp"/>
+                    </c:when>
+                    <c:when test="${user.role == 'Police'}">
+                        <jsp:include page="../police/policeHeader.jsp"/>
+                    </c:when>
+                    <c:when test="${user.role == 'Admin'}">
+                        <jsp:include page="../admin/adminHeader.jsp"/>
+                    </c:when>
+                    <c:otherwise>
+                        <p class="text-danger">Không xác định vai trò</p>
+                    </c:otherwise>
+                </c:choose>
             </div>
+           
 
             <!-- Main Content -->
             <main>

@@ -42,7 +42,7 @@
                             <a href="${pageContext.request.contextPath}/view/admin/manageUsers.jsp">Người dùng</a>
                         </li>
                         <li class="nav-item">
-                            <a href="${pageContext.request.contextPath}/view/admin/manageHouseholds.jsp">Dashboard</a>
+                            <a href="${pageContext.request.contextPath}/view/admin/manageHouseholds.jsp">Thống kê</a>
                         </li>
                         <li class="nav-item">
                             <a href="${pageContext.request.contextPath}/view/admin/manageRegistrations.jsp">Đăng ký</a>
